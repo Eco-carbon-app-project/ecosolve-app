@@ -49,7 +49,7 @@ if choice == "Sign Up":
     new_user = st.text_input("Username")
     new_email = st.text_input("Email Address")
     new_password = st.text_input("Password", type="password")
-    block = st.selectbox("Campus Block / Club", ["Block A", "Block B", "Hostel 1", "Hostel 2", "Faculty", "Eco Club"])
+    block = st.selectbox("Campus Block / Club", ["Block A", "Block B", "Block D", "Block E", "Block F", "Block J", "Block C", "Block G", "Block H", "Phase 2", "Phase 3"])
     
     st.markdown("---")
     
@@ -172,7 +172,7 @@ elif choice == "Log Actions":
         except:
             u_cat, u_item = "N/A", "N/A"
             
-        u_qty = st.number_input("Quantity (floors, bottles, km, etc.)", min_value=1.0, value=1.0, step=1.0, key="u_qty")
+        u_qty = st.number_input("Quantity (floors, bottles, km, etc.)", min_value=0.1, value=1.0, step=0.1, key="u_qty")
         
         if st.button("➕ Add to Used List", use_container_width=True):
             st.session_state['used_cart'].append({"category": u_cat, "item": u_item, "qty": u_qty})
@@ -195,7 +195,7 @@ elif choice == "Log Actions":
         except:
             a_cat, a_item = "N/A", "N/A"
             
-        a_qty = st.number_input("Quantity (floors, bottles, km, etc.)", min_value=1.0, value=1.0, step=1.0, key="a_qty")
+        a_qty = st.number_input("Quantity (floors, bottles, km, etc.)", min_value=0.1, value=1.0, step=0.1, key="a_qty")
         
         if st.button("➕ Add to Avoided List", use_container_width=True):
             st.session_state['avoided_cart'].append({"category": a_cat, "item": a_item, "qty": a_qty})
